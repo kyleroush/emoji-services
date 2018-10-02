@@ -2,14 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.aws.codestar.projecttemplates</groupId>
-    <artifactId>HelloWorldParent</artifactId>
+    <artifactId>emoji-services</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
     <name>Sample Java Spring web service Using AWS CodeStar</name>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.3.RELEASE</version>
+        <groupId>com.aws.codestar.projecttemplates</groupId>
+        <artifactId>HelloWorldParent</artifactId>
+        <version>1.0</version>
     </parent>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -17,10 +17,6 @@
         <junit.platform.version>1.2.0</junit.platform.version>
         <junit.jupiter.version>5.2.0</junit.jupiter.version>
     </properties>
-
-    <modules>
-        <module>emoji-services</module>
-    </modules>
 
     <dependencies>
         <dependency>
