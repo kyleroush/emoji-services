@@ -1,0 +1,41 @@
+<web-app metadata-complete="false">
+  <display-name>HealthConcern</display-name>
+
+  <listener>
+    <listener-class>
+      com.aws.codestar.projecttemplates.guice.EmojiServiceContextListener
+    </listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>Resteasy</servlet-name>
+    <servlet-class>
+      org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+    </servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Resteasy</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+
+  <!-- We need this filter to allow Swagger UI to route through the service proxy and hit our REST service
+  See https://www.eclipse.org/jetty/documentation/9.4.x/cross-origin-filter.html -->
+  <filter>
+    <filter-name>cross-origin</filter-name>
+    <filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
+    <init-param>
+      <param-name>allowedOrigins</param-name>
+      <param-value>*</param-value>
+    </init-param>
+    <init-param>
+      <param-name>allowedMethods</param-name>
+      <param-value>*</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>cross-origin</filter-name>
+    <servlet-name>emoji-service</servlet-name>
+  </filter-mapping>
+</web-app>
