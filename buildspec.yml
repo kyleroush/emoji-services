@@ -13,7 +13,7 @@ phases:
       - mvn war:exploded
   post_build:
     commands:
-      - cp -r .ebextensions/ target/ROOT/
+      - cp -r .ebextensions/ emoji-service/target/ROOT/
       - aws cloudformation package --template template.yml --s3-bucket $S3_BUCKET --output-template-file template-export.yml
 artifacts:
   type: zip
