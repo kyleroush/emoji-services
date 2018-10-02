@@ -47,7 +47,7 @@ AWS CodeStar user guide.
    location of that directory will vary depending on your platform and
    installation.
 
-        $ cp emoji-service/target/ROOT.war <tomcat webapp directory>
+        $ cp emoji-services/target/ROOT.war <tomcat webapp directory>
 
 4. Restart your tomcat server
 
